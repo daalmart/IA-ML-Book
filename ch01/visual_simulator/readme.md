@@ -36,3 +36,7 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
    ```bash
    git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
    cd tu-repositorio
+
+---
+## Fundamentos Teóricos de los Algoritmos
+### DFS (Búsqueda en Profundidad)
