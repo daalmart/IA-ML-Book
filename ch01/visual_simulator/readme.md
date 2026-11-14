@@ -1,20 +1,19 @@
 # 🧭 Simulador Visual de Algoritmos de Búsqueda en IA
 
-Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, comparar y analizar el comportamiento de algoritmos de búsqueda informada y no informada sobre grafos representados como laberintos con obstáculos y costos variables[cite: 1, 13].
+Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, comparar y analizar el comportamiento de algoritmos de búsqueda informada y no informada sobre grafos representados como laberintos con obstáculos y costos variables. Este entorno permite abstraer conceptos complejos tales como espacio de estados, set de acciones, rutas óptimas, costo acumulado y número de nodos visitados, los cuales convencionalmente se describen mediante árboles de búsqueda o grafos. 
 
 ---
 
 ## 📑 Tabla de Contenidos
 1. [Características Principales](#-características-principales)
 2. [Instalación y Ejecución](#-instalación-y-ejecución)
-3. [Guía de Controles e Interfaz](#-guía-de-controles-e-interfaz)
-4. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
+3. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
    - [DFS (Búsqueda en Profundidad)](#dfs)
    - [BFS (Búsqueda en Anchura)](#bfs)
    - [UCS (Búsqueda de Costo Uniforme)](#ucs)
-   - [GBFS (Búsqueda Voraz Primero el Mejor)](#gbfs)
+   - [GBFS (Búsqueda Basada en Heurísticas)](#gbfs)
    - [A* (A-Estrella)](#a-star)
-5. [Guía de Laboratorio: Experimentos Sugeridos](#-guía-de-laboratorio-experimentos-sugeridos)
+4. [Guía de Laboratorio: Experimentos Sugeridos](#-guía-de-laboratorio-experimentos-sugeridos)
 
 ---
 
