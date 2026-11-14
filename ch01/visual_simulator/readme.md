@@ -39,4 +39,5 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
 
 ---
 ## Fundamentos Teóricos de los Algoritmos
+Los algoritmos de búsqueda son pilares fundamentales de la inteligencia artificial y han sido ampliamente utilizados para resolver problemas en los que a partir de un estado inicial se requiere llegar a un estado meta. Dentro de las aplicaciones de estos algoritmos se pueden encontrar soluciones para planificación de rutas y navegación geográfica (Google Maps), navegación en vehículos autónomos, pathfinding en video juegos, optimización de rutas en cadenas de suministro y enrutamiento de paquetes en redes de comunicaciones, entre muchas otras más.
 ### DFS (Búsqueda en Profundidad)
