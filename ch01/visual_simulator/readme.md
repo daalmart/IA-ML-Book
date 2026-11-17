@@ -68,12 +68,12 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
   <table>
     <tr>
       <td align="center">
-        <img width="300" alt="Laberinto Simple" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
+        <img width="300" alt="Escenario real." src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
         <br />
         <sub><b>a) Escenario real.</b> Un agente con tres rutas diferentes. Algunas lo pueden llevar hasta la meta pero otras pueden ser fatales. El agente puede moverse a través de las ubicaciones dentro del laberinto, las cuales están representadas por círculos numerados. En este caso, tales ubicaciones representan los estados. La dirección de las flechas indica la acción que el agente puede usar en cada estado.</sub>
       </td>
       <td align="center">
-        <img width="300" alt="Laberinto Complejo" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
+        <img width="300" alt="Árbol de búsqueda." src="https://github.com/user-attachments/assets/168fe25b-8aab-4edc-a5d7-081b079ca734" />
         <br />
         <sub><b>b) Árbol de búsqueda.</b> Algunos estados pueden aparecer más de una vez debido a que secuencias diferentes pueden conducir a ellos. En este caso tenemos dos rutas hacia el estado meta (Goal) y dos rutas diferentes para llegar al abismo con lava (estado 8).</sub>
       </td>
