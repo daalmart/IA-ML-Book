@@ -70,16 +70,16 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
       <td align="center">
         <img width="300" alt="Laberinto Simple" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
         <br />
-        <sub><b>a) Laberinto Simple:</b> Vista general de nodos.</sub>
+        <sub><b>a) Escenario real.</b> Un agente con tres rutas diferentes. Algunas lo pueden llevar hasta la meta pero otras pueden ser fatales. El agente puede moverse a través de las ubicaciones dentro del laberinto, las cuales están representadas por círculos numerados. En este caso, tales ubicaciones representan los estados. La dirección de las flechas indica la acción que el agente puede usar en cada estado.</sub>
       </td>
       <td align="center">
         <img width="300" alt="Laberinto Complejo" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
         <br />
-        <sub><b>b) Laberinto Complejo:</b> Puentes, lava y abismos.</sub>
+        <sub><b>b) Árbol de búsqueda.</b> Algunos estados pueden aparecer más de una vez debido a que secuencias diferentes pueden conducir a ellos. En este caso tenemos dos rutas hacia el estado meta (Goal) y dos rutas diferentes para llegar al abismo con lava (estado 8).</sub>
       </td>
     </tr>
   </table>
-  <p><em>Figura 1: Comparativa de los dos escenarios disponibles en el simulador.</em></p>
+  <p><em>Figura 2: Ejemplo de ambiente para un agente o vehículo autónomo (a), y su representación como un árbol de búsqueda (b).</em></p>
 </div>
 
 ### DFS (Búsqueda en Profundidad)
