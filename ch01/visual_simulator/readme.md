@@ -9,6 +9,7 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
 2. [Instalación y Ejecución](#-instalación-y-ejecución)
 3. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
    - [Agente](#agente)
+   - [Árbol de Búsqueda](#arbol)
    - [DFS (Búsqueda en Profundidad)](#dfs) 
    - [BFS (Búsqueda en Anchura)](#bfs)
    - [UCS (Búsqueda de Costo Uniforme)](#ucs)
@@ -59,6 +60,28 @@ La segunda se calcula también desde cada estado hasta el estado meta usando una
 $$h_{\text{manhattan}}(n) = |x_1 - x_2| + |y_1 - y_2|,$$
 
 donde $x_i$, $y_i$ representan las posiciones en el plano 2D para el agente mostrado en la Figura 1.
+
+### Árbol de Búsqueda
+Un árbol de búsqueda es un mecanismo gráfico que permite representar al espacio de estados y las transiciones entre estos que se producen por las acciones. En cada árbol de búsqueda hay un nodo inicial y un nodo meta. 
+
+<div align="center">
+  <table>
+    <tr>
+
+      <td align="center">
+        <img width="300" alt="Laberinto Simple" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
+        <br />
+        <sub><b>a) Laberinto Simple:</b> Vista general de nodos.</sub>
+      </td>
+      <td align="center">
+        <img width="300" alt="Laberinto Complejo" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
+        <br />
+        <sub><b>b) Laberinto Complejo:</b> Puentes, lava y abismos.</sub>
+      </td>
+    </tr>
+  </table>
+  <p><em>Figura 1: Comparativa de los dos escenarios disponibles en el simulador.</em></p>
+</div>
 
 ### DFS (Búsqueda en Profundidad)
 
