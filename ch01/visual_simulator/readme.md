@@ -56,7 +56,7 @@ $$h_{\text{euclidiana}}(n) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$$
 
 La segunda se calcula también desde cada estado hasta el estado meta usando una distancia Mahnattan por medio de la siguiente expresión:
 
-$$h_{\text{manhattan}}(n) = \sqrt{|x_1 - x_2| + |y_1 - y_2|},$$
+$$h_{\text{manhattan}}(n) = |x_1 - x_2| + |y_1 - y_2|,$$
 
 donde $x_i$, $y_i$ representan las posiciones en el plano 2D para el agente mostrado en la Figura 1.
 
