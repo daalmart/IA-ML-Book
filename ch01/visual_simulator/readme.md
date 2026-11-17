@@ -47,7 +47,7 @@ Un agente representa a una entidad con capacidad computacional que advierte los 
 Un agente opera dentro de un ambiente, y que ese ambiente posee múltiples estados que conforman lo que conocemos como espacio de estados. Dentro de cada estado, el agente puede tomar decisiones, es decir, ejecutar acciones que pertenecen al set de acciones. Esto se ilustra mejor en la Figura 1.
 
 <p align="center">
-  <img width="300" height="300" alt="R4_1" src=\"../resources/binTreeGBFS.png\" />
+  <img width="300" height="300" alt="R4_1" src="../resources/binTreeGBFS.png" />
   <br>
   <em>Figura 1: Un agente (vehículo) dentro de un ambiente con un espacio de estados y un set de acciones (arriba, abajo, derecha e izquierda). En este caso, el espacio de estados está dado por posiciones que el vehículo puede ocupar en su ruta desde el estado inicial hacia el el estado meta (bandera verde).</em>
 </p>
