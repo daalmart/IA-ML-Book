@@ -67,7 +67,6 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
 <div align="center">
   <table>
     <tr>
-
       <td align="center">
         <img width="300" alt="Laberinto Simple" src="https://github.com/user-attachments/assets/2812ac55-fc59-4ecd-91c3-4be84b653670" />
         <br />
