@@ -84,6 +84,8 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
   <p><em>Figura 2: Ejemplo de ambiente para un agente o vehículo autónomo (a), y su representación como un árbol de búsqueda (b).</em></p>
 </div>
 
+## Búsqueda no Informada
+
 ### Depth First Search
 Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas del árbol de búsqueda. Utiliza como mecanismo una pila tipo LIFO, en la cual inserta los nodos que se evalúan para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 3. 
 
@@ -155,6 +157,11 @@ de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de 
 | 14 | Valle de Sibundoy | – | `[(Valle de Sibundoy, 30)]` |
 
 <p align="center"><em>Tabla 1: Evolución de la cola de prioridad durante la ejecución de UCS para el árbol de la Figura 4.</em></p>
+
+## Búsqueda Informada
+
+### Greedy Best First Search
+
 
 La implementación computacional de UCS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/ucs.ipynb">UCS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
