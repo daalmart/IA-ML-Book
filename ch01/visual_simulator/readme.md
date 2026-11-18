@@ -203,7 +203,50 @@ El algoritmo de búsqueda A* combina las cualidades de UCS y GBFS, dado que util
 
 f (n) = g(n) + h(n),
 
-es decir, A* considera el costo acumulado de cada nodo desde el nodo inicial hasta n, representado por g(n), y una estimación del costo restante desde n hasta la meta, representada por h(n). De esta manera, el algoritmo busca un equilibrio entre el costo que ya se ha tenido que asumir para llegar a un determinado nodo y el costo estimado que aún falta para alcanzar la meta. Bajo condiciones apropiadas sobre la función heurística, tales como la admisibilidad y la consistencia, este comportamiento permite que A* sea completo y encuentre soluciones óptimas. Estas condiciones se describen con gran detalle en el Capítulo 1 del libro de introducción a la inteligencia artificial, disponible en: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/ch01.pdf">Capítulo 1.</a>
+es decir, A* considera el costo acumulado de cada nodo desde el nodo inicial hasta n, representado por g(n), y una estimación del costo restante desde n hasta la meta, representada por h(n). De esta manera, el algoritmo busca un equilibrio entre el costo que ya se ha tenido que asumir para llegar a un determinado nodo y el costo estimado que aún falta para alcanzar la meta. Bajo condiciones apropiadas sobre la función heurística, tales como la admisibilidad y la consistencia, este comportamiento permite que A* sea completo y encuentre soluciones óptimas. Estas condiciones se describen a continuación de manera resumida. Para obtener más detalles sobre estos concpetos, remítase al Capítulo 1 del libro de introducción a la inteligencia artificial, disponible en: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/ch01.pdf">Capítulo 1.</a>
 
+# Admisibilidad
+La admisibilidad establece que el valor de una heurística h(n), para un nodo específico n, debe ser no negativo y no debe superar el costo óptimo real h∗ (n) para alcanzar la meta desde ese mismo nodo. Este costo óptimo real, corresponde al costo mínimo acumulado de las acciones necesarias para alcanzar la meta desde el nodo n. Formalmente, la condición de admisibilidad se expresa como
+
+∀n, 0 ≤ h(n) ≤ h∗ (n).
+
+El algoritmo A* es óptimo en costo para búsqueda en árboles cuando utiliza una heurística admisible.
+
+# Consistencia
+Esta condición establece que una heurística h(n) es consistente si para cada nodo n y para cada nodo n′ sucesor de n generado mediante la acción a, se tiene
+
+h(n) ≤ c(n, a, n′ ) + h(n′ ),
+
+donde c(n, a, n′ ) es el costo de la acción que genera la transición entre n y n′ (ver Figura 6). Una heurística consistente es también admisible, pero no al contrario, es decir, una heurística admisible no necesariamente es consistente.
+
+<p align="center">
+  <img width="300" alt="GBFS" src="../resources/figures/consistencia.png" />
+   <br>
+  <em>Figura 6: Definición de consistencia. La heurística h(n) es consistente si su valor es menor o igual que la suma del costo de la acción que genera la transición entre n y n′ y la heurística del nodo n′.</em>
+</p>
+
+Bajo una heurística consistente, en A* cada estado es expandido como máximo una vez.
+
+Para entender el funcionamiento de este algoritmo, considere el grafo de la Figura 7, en el cual los valores de heurística están sobre los nodos (en rojo), y los costos de las acciones se muestran sobre los enlaces (en azul). La heurística es escogida bajo la regla h(n) ≤ c(n, a, n′ ) + h(n′ ), asi, por ejemplo, para el nodo B se tiene h(B) = 5 ≤ c(B, a,C) + h(C) = 4 + 3 = 7. En este caso, hemos escogido un grafo para demostrar que, bajo una heurística consistente, al igual que sucede con un árbol, cada nodo es extraído una sola vez sin que sea necesario volver a analizarlo. Los pasos del algoritmo se describen en la Tabla 3. Observe que la ruta seleccionada es la óptima, es de-
+cir, la que va por A,C, G con costo de 6.
+
+<p align="center">
+  <img width="300" alt="GBFS" src="../resources/figures/astar.png" />
+   <br>
+  <em>Figura 7: Árbol de búsqueda con heurística consistente.</em>
+</p>
+
+| Paso | Nodo que se extrae | Nodo que ingresa, $f(n)$ | Estado de la cola | Observaciones |
+| :---: | :---: | :--- | :--- | :--- |
+| 1 | – | A, $f(A) = 4$ | `[(A, 4)]` | – |
+| 2 | A | B, $f(B) = 6$, C, $f(C) = 6$ | `[(B, 6), (C, 6)]` | Empate: Suponga que en el siguiente paso sale B (ruta subóptima) |
+| 3 | B | C, $f(C) = 8$ | `[(C, 8), (C, 6)]` | – |
+| 4 | C | (G, 6) | `[(G, 6), (C, 8)]` | – |
+| 5 | G | – | `[(C, 8)]` | Para llegar a la meta, cada nodo fue expandido una única vez. |
+
+<p align="center"><em>Tabla 3: Comportamiento de la cola de prioridad para el grafo de la Figura 7.</em></p>
+
+
+La implementación computacional de A* usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/informed_search/astar.ipynb">A*.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
 
