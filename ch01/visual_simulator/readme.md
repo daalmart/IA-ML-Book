@@ -10,7 +10,7 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
 3. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
    - [Agente](#agente)
    - [Árbol de Búsqueda](#árbol-de-búsqueda)
-   - [DFS-Depth First Search](#dfs-depth-first-search) 
+   - [Depth First Search](#dfs-depth-first-search) 
    - [BFS-Breadth First Search](#breadth-first-search)
    - [UCS-Uniform Cost Search](#ucs-uniform-cost-search)
    - [GBFS-Greedy Best First Search](#gbfs)
@@ -84,5 +84,5 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
   <p><em>Figura 2: Ejemplo de ambiente para un agente o vehículo autónomo (a), y su representación como un árbol de búsqueda (b).</em></p>
 </div>
 
-### DFS (Búsqueda en Profundidad)
+### Depth First Search
 
