@@ -187,8 +187,8 @@ El algoritmo Greedy Best-First Search, orienta la exploración utilizando exclus
 
 <p align="center"><em>Tabla 2: Ejecución de Greedy Best-First Search para el ejemplo de la Figura 5. GBFS no considera costos acumulados sino solamente valores de heurística.</em></p>
 
-Tal como ya lo mencionamos, la función heurística h(n) en el caso de nuestro simulador ofrece dos opciones, una heurística Euclideana y otra de tipo Manhattan, ambas considerando las coordenadas x e y de cada uno de los nodos para calcular las distancias hasta el nodo meta.
+Tal como ya lo mencionamos en la sección #agente, la función heurística h(n) en el caso de nuestro simulador ofrece dos opciones, una heurística Euclideana y otra de tipo Manhattan, ambas considerando las coordenadas x e y de cada uno de los nodos para calcular las distancias hasta el nodo meta.
 
-La implementación computacional de GBFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/informed_search/gbfs.ipynb">UCS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
+La implementación computacional de GBFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/informed_search/gbfs.ipynb">GBFS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
 
