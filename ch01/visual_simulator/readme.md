@@ -110,3 +110,5 @@ Los pasos a seguir por el algoritmo son los siguientes:
 </p>
 
 y las acciones que el agente debe ejecutar son {b,e,e’,b’,a,d,d’,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no ingresan a la pila LIFO por segunda vez, esto, tal como ya lo hemos dicho, con el fin de evitar bucles infinitos en el algoritmo.
+
+La implementación computacional de DFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/dfs_bfs.ipynb">DFS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
