@@ -198,4 +198,12 @@ Tal como ya lo mencionamos en la sección [Agente](#agente), la función heurís
 
 La implementación computacional de GBFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/informed_search/gbfs.ipynb">GBFS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
+### A*
+El algoritmo de búsqueda A* combina las cualidades de UCS y GBFS, dado que utiliza una cola de prioridad que considera tanto el costo acumulado de las acciones como los valores de la heurística. Desde un punto de vista más formal, si denominamos f(n) a la función de costo total utilizada por A*, g(n) a la función de costo acumulado usada en UCS y h(n) a la función heurística analizada para GBFS, se tiene que
+
+f (n) = g(n) + h(n),
+
+es decir, A* considera el costo acumulado de cada nodo desde el nodo inicial hasta n, representado por g(n), y una estimación del costo restante desde n hasta la meta, representada por h(n). De esta manera, el algoritmo busca un equilibrio entre el costo que ya se ha tenido que asumir para llegar a un determinado nodo y el costo estimado que aún falta para alcanzar la meta. Bajo condiciones apropiadas sobre la función heurística, tales como la admisibilidad y la consistencia, este comportamiento permite que A* sea completo y encuentre soluciones óptimas. Estas condiciones se describen con gran detalle en el Capítulo 1 del libro de introducción a la inteligencia artificial, disponible en: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/ch01.pdf">Capítulo 1.</a>
+
+
 
