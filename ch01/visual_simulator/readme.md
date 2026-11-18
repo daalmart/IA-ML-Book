@@ -89,7 +89,9 @@ Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas d
 para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 3. 
 
 <p align="center">
-  <img width="500" height="100" alt="Visitados DFS" src="../resources/figures/treeCh01.png" />
+  <img width="300" alt="Visitados DFS" src="../resources/figures/treeCh01.png" />
+   <br>
+  <em>Figura 3: Árbol de búsqueda con nodo inicial A y nodo meta D. Las acciones están dadas por las letras en minúscula. Las acciones asociadas a backtracking se muestran como letras acompañadas de comilla simple (apóstrofo) y en color rojo.</em>
 </p>
 
 Los pasos a seguir por el algoritmo son los siguientes:
