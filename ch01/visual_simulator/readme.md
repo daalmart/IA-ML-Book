@@ -9,12 +9,12 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
 2. [Instalación y Ejecución](#-instalación-y-ejecución)
 3. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
    - [Agente](#agente)
-   - [Árbol de Búsqueda](#arbol)
-   - [DFS (Búsqueda en Profundidad)](#dfs) 
-   - [BFS (Búsqueda en Anchura)](#bfs)
-   - [UCS (Búsqueda de Costo Uniforme)](#ucs)
-   - [GBFS (Búsqueda Basada en Heurísticas)](#gbfs)
-   - [A* (A-Estrella)](#a-star)
+   - [Árbol de Búsqueda](#árbol-de-búsqueda)
+   - [DFS-Depth First Search](#dfs-depth-first-search) 
+   - [BFS-Breadth First Search](#breadth-first-search)
+   - [UCS-Uniform Cost Search](#ucs-uniform-cost-search)
+   - [GBFS-Greedy Best First Search](#gbfs)
+   - [A*](#a*)
 4. [Guía de Laboratorio: Experimentos Sugeridos](#-guía-de-laboratorio-experimentos-sugeridos)
 
 ---
