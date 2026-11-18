@@ -115,9 +115,9 @@ La implementación computacional de DFS usada en nuestro simulador, está dispon
 ### Breadth First Search
 A diferencia del DFS, el algoritmo BFS hace una búsqueda del nodo meta hacia lo ancho del árbol. Para lograr esto, BFS se vale de una cola tipo FIFO, en la cual, el primer nodo en entrar es el primero en salir. En otras palabras, el comportamiento implícito en el proceso de inserción y extracción de este tipo de cola, garantiza que el árbol sea explorado hacia lo ancho y no hacia lo profundo como ocurre con DFS y su pila tipo LIFO. Para describir con mayor detalle el proceso, vamos a utilizar nuevamente el árbol mostrado en la Figura 3. Los pasos que el algoritmo sigue son los siguientes:
 1. Se inserta el nodo inicial en la cola FIFO: [A].
-2. Se extrae A de la cola y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la cola y se marcan como visitados. La cola ahora es [B, C].
+2. Se extrae A de la cola y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la cola y se marcan como visitados. La cola ahora es [B, C].
 3. Si tenemos en cuenta que los nodos en la cola se van insertando de izquierda a derecha, entonces el nodo B fue el primero en entrar, por lo tanto, extraemos B. Ya que B no es el nodo meta, extraemos sus hijos, los ponemos en la cola y los marcamos como visitados. La pila resultante es [C, D, E].
-4. El siguiente nodo en ser extraído es C, dado que ingresó antes que los nodos D y E. Ya que no es el nodo meta, extraemos su único hijo que es el nodo F, y lo ponemos en la cola, cuyo contenido ahora es [D, E, F].
+4. El siguiente nodo en ser extraído es C, dado que ingresó antes que los nodos D y E. Ya que no es el nodo meta, extraemos su único hijo que es el nodo F, y lo ponemos en la cola, cuyo contenido ahora es [D, E, F].
 5. Se extrae el nodo D. Dado que este es la meta, el algoritmo termina. La secuencia final de estados visitados es:
 
 <p align="center">
