@@ -126,6 +126,36 @@ A diferencia del DFS, el algoritmo BFS hace una búsqueda del nodo meta hacia lo
 
 y las acciones que el agente debe ejecutar son {a,a’,b,b’,a,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no ingresan a la cola FIFO por segunda vez, esto, tal como ya lo hemos dicho, con el fin de evitar bucles infinitos en el algoritmo. Es importante tener en cuenta que en BFS no hay proceso de backtracking debido a que el algoritmo no se devuelve hacia los nodos padre. Si comparamos el número de nodos visitados en DFS y BFS, nos damos cuenta que BFS solamente visitó 3 nodos antes de llegar a la meta; por el contrario, DFS visitó 5, lo que supone que DFS toma más tiempo de ejecución para el caso de nuestro ejemplo. En términos de acciones ejecutadas, se puede apreciar que en BFS se tuvieron 6, 2 menos que en DFS.
 
-La implementación computacional de BFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/dfs_bfs.ipynb">BFS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
+### Uniform Cost Search
+El algoritmo UCS, también conocido como búsqueda de costo uniforme, se basa en el mismo principio que el algoritmo de Dijkstra, propuesto por el matemático y científico
+de la computación neerlandés Edsger W. Dijkstra, para encontrar caminos de costo mínimo desde un nodo de origen, considerando costos de transición no negativos. UCS utiliza una cola de prioridad en la cual los nodos con menor costo acumulado, es decir, los nodos cuya suma de costos de acciones en dirección al nodo inicial sea mínima, son los primeros en ser extraídos. De esta manera, a partir del nodo inicial, el algoritmo va almacenando en la cola de prioridad los nodos junto con sus respectivos costos acumulados, y selecciona para expansión aquel cuyo costo acumulado sea menor. Este proceso continúa hasta que el nodo meta es seleccionado para su expansión, es decir, hasta que es extraído de la cola. Para ilustrar este proceso, considere el ejemplo de la Figura 4, el cual representa una situación que podría enfrentar un vehículo autónomo cuyo objetivo es llegar desde la cuidad de Bogotá, al Valle de Sibundoy, en Colombia, utilizando dos rutas diferentes: una a través del departamento del Huila pasando por la ciudad
+de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de Popayán. Los pasos que el algoritmo ejecuta se muestran en la Tabla 1. Observe que la ruta que escogería el vehículo autónomo utilizando UCS es la que atraviesa el departamento del Cauca, dado que el costo acumulado de esta ruta es 29, mientras que la otra ruta acumula un costo de 30. Aunque este resultado puede parecer bastante obvio para un ser humano, es importante recordar que los algoritmos de inteligencia artificial, como los expuestos en este libro, constituyen herramientas que permiten dotar a los sistemas computacionales de mecanismos para analizar diferentes alternativas y seleccionar aquella que, de acuerdo con los criterios establecidos, resulte más conveniente.
+
+<p align="center">
+  <img width="500" height="100" alt="Visitados BFS" src="../resources/figures/UCS.png" />
+   <br>
+  <em>Figura 4: Árbol de búsqueda que representa el viaje de un vehículo autónomo desde Bogotá hasta el Valle de Sibundoy en Colombia. Los costos entre estados (nodos del árbol) se estiman a partir del estado histórico de las vías.</em>
+</p>
+
+| Paso | Nodo que se extrae | Nodo que ingresa – costo acumulado | Estado de la cola |
+| :---: | :--- | :--- | :--- |
+| 1 | – | Bogotá – 0 | `[(Bogotá, 0)]` |
+| 2 | Bogotá | Melgar – 4, Girardot – 5 | `[(Melgar, 4), (Girardot, 5)]` |
+| 3 | Melgar | Ibagué – 6 | `[(Girardot, 5), (Ibagué, 6)]` |
+| 4 | Girardot | El Espinal – 7 | `[(Ibagué, 6), (El Espinal, 7)]` |
+| 5 | Ibagué | Armenia – 13 | `[(El Espinal, 7), (Armenia, 13)]` |
+| 6 | El Espinal | Neiva – 10 | `[(Neiva, 10), (Armenia, 13)]` |
+| 7 | Neiva | Pitalito – 14 | `[(Armenia, 13), (Pitalito, 14)]` |
+| 8 | Armenia | Cali – 15 | `[(Pitalito, 14), (Cali, 15)]` |
+| 9 | Pitalito | Mocoa – 20 | `[(Cali, 15), (Mocoa, 20)]` |
+| 10 | Cali | Popayán – 19 | `[(Popayán, 19), (Mocoa, 20)]` |
+| 11 | Popayán | Pasto – 26 | `[(Mocoa, 20), (Pasto, 26)]` |
+| 12 | Mocoa | Valle de Sibundoy – 30 | `[(Pasto, 26), (Valle de Sibundoy, 30)]` |
+| 13 | Pasto | Valle de Sibundoy – 29 | `[(Valle de Sibundoy, 29), (Valle de Sibundoy, 30)]` |
+| 14 | Valle de Sibundoy | – | `[(Valle de Sibundoy, 30)]` |
+
+<p align="center"><em>Tabla 1: Evolución de la cola de prioridad durante la ejecución de UCS para el árbol de la Figura 4.</em></p>
+
+La implementación computacional de UCS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/ucs.ipynb">UCS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
 
