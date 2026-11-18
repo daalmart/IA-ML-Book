@@ -141,6 +141,8 @@ de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de 
   <em>Figura 4: Árbol de búsqueda que representa el viaje de un vehículo autónomo desde Bogotá hasta el Valle de Sibundoy en Colombia. Los costos entre estados (nodos del árbol) se estiman a partir del estado histórico de las vías.</em>
 </p>
 
+<div align="center">
+
 | Paso | Nodo que se extrae | Nodo que ingresa – costo acumulado | Estado de la cola |
 | :---: | :--- | :--- | :--- |
 | 1 | – | Bogotá – 0 | `[(Bogotá, 0)]` |
@@ -159,6 +161,7 @@ de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de 
 | 14 | Valle de Sibundoy | – | `[(Valle de Sibundoy, 30)]` |
 
 <p align="center"><em>Tabla 1: Evolución de la cola de prioridad durante la ejecución de UCS para el árbol de la Figura 4.</em></p>
+</div>
 
 La implementación computacional de UCS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/ucs.ipynb">UCS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
