@@ -10,11 +10,13 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
 3. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
    - [Agente](#agente)
    - [Árbol de Búsqueda](#árbol-de-búsqueda)
-   - [Depth First Search](#depth-first-search) 
-   - [Breadth First Search](#breadth-first-search)
-   - [Uniform Cost Search](#uniform-cost-search)
-   - [Greedy Best First Search](#gbfs)
-   - [A*](#a)
+   - [Búsqueda no Informada](#búsqueda-no-informada)
+     - [Depth First Search](#depth-first-search) 
+     - [Breadth First Search](#breadth-first-search)
+     - [Uniform Cost Search](#uniform-cost-search)
+   - [Búsqueda Informada](#búsqueda-informada)
+     - [Greedy Best First Search](#gbfs)
+     - [A*](#a)
 4. [Guía de Laboratorio: Experimentos Sugeridos](#-guía-de-laboratorio-experimentos-sugeridos)
 
 ---
@@ -205,14 +207,14 @@ f (n) = g(n) + h(n),
 
 es decir, A* considera el costo acumulado de cada nodo desde el nodo inicial hasta n, representado por g(n), y una estimación del costo restante desde n hasta la meta, representada por h(n). De esta manera, el algoritmo busca un equilibrio entre el costo que ya se ha tenido que asumir para llegar a un determinado nodo y el costo estimado que aún falta para alcanzar la meta. Bajo condiciones apropiadas sobre la función heurística, tales como la admisibilidad y la consistencia, este comportamiento permite que A* sea completo y encuentre soluciones óptimas. Estas condiciones se describen a continuación de manera resumida. Para obtener más detalles sobre estos concpetos, remítase al Capítulo 1 del libro de introducción a la inteligencia artificial, disponible en: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/ch01.pdf">Capítulo 1.</a>
 
-# Admisibilidad
+### Admisibilidad
 La admisibilidad establece que el valor de una heurística h(n), para un nodo específico n, debe ser no negativo y no debe superar el costo óptimo real h∗ (n) para alcanzar la meta desde ese mismo nodo. Este costo óptimo real, corresponde al costo mínimo acumulado de las acciones necesarias para alcanzar la meta desde el nodo n. Formalmente, la condición de admisibilidad se expresa como
 
 ∀n, 0 ≤ h(n) ≤ h∗ (n).
 
 El algoritmo A* es óptimo en costo para búsqueda en árboles cuando utiliza una heurística admisible.
 
-# Consistencia
+### Consistencia
 Esta condición establece que una heurística h(n) es consistente si para cada nodo n y para cada nodo n′ sucesor de n generado mediante la acción a, se tiene
 
 h(n) ≤ c(n, a, n′ ) + h(n′ ),
@@ -236,6 +238,8 @@ cir, la que va por A,C, G con costo de 6.
   <em>Figura 7: Árbol de búsqueda con heurística consistente.</em>
 </p>
 
+<div align="center">
+
 | Paso | Nodo que se extrae | Nodo que ingresa, $f(n)$ | Estado de la cola | Observaciones |
 | :---: | :---: | :--- | :--- | :--- |
 | 1 | – | A, $f(A) = 4$ | `[(A, 4)]` | – |
@@ -245,6 +249,8 @@ cir, la que va por A,C, G con costo de 6.
 | 5 | G | – | `[(C, 8)]` | Para llegar a la meta, cada nodo fue expandido una única vez. |
 
 <p align="center"><em>Tabla 3: Comportamiento de la cola de prioridad para el grafo de la Figura 7.</em></p>
+</div>
+
 
 
 La implementación computacional de A* usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/informed_search/astar.ipynb">A*.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
