@@ -170,5 +170,22 @@ más prometedores. De esta manera, es posible reducir el número de estados expl
 ### Greedy Best First Search
 El algoritmo Greedy Best-First Search, orienta la exploración utilizando exclusivamente los valores proporcionados por la función heurística h(n), sin considerar el costo de las acciones. Para ello, emplea una cola de prioridad en la que los nodos se organizan de acuerdo con su valor heurístico, de tal manera que se selecciona para expansión, el nodo con el menor valor de h(n), bajo la interpretación de que este valor da un indicio del mejor camino hacia la meta. De esta manera, el algoritmo prioriza aquellos nodos que, de acuerdo con la información heurística disponible, parecen estar más cerca de conducir hacia la solución. En el caso expuesto en la Figura 5, desde el estado inicial, el orden de prioridad para exploración es 2,6 y 9, es decir, que el agente seguirá el camino en dirección hacia el nodo 2. Todos los pasos que seguirá el algoritmo GBFS para este ejemplo se muestran en la Tabla 2.
 
+<p align="center">
+  <img width="300" alt="Visitados BFS" src="../resources/figures/GBFS.png" />
+   <br>
+  <em>Figura 5: Caso del espacio de estados para un vehículo autónomo que busca llegar a la meta. Para cada nodo n, se define una heurística h(n) que disminuye para aquellos nodos que tienen mejor potencial para conducir hacia la meta. El agente preferirá irse por la ruta del nodo 2.</em>
+</p>
+
+| Paso | Nodo que entra | $h(n)$ | Nodo que sale |
+| :---: | :--- | :--- | :---: |
+| 1 | 1 | $h(1) = 4$ | – |
+| 2 | 2, 6, 9 | $h(2) = 3$, $h(6) = 4$, $h(9) = 30$ | 1 |
+| 3 | 3 | $h(3) = 2$ | 2 |
+| 4 | 4 | $h(4) = 1$ | 3 |
+| 5 | 5 | $h(5) = 0$ | 4 |
+| 6 | – | – | 5 |
+
+<p align="center"><em>Tabla 2: Ejecución de Greedy Best-First Search para el ejemplo de la Figura 5. GBFS no considera costos acumulados sino solamente valores de heurística.</em></p>
+
 
 
