@@ -84,7 +84,9 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
   <p><em>Figura 2: Ejemplo de ambiente para un agente o vehículo autónomo (a), y su representación como un árbol de búsqueda (b).</em></p>
 </div>
 
+---
 ## Búsqueda no Informada
+La búsqueda no informada es aquella en la que el agente no tiene ninguna noción sobre el costo o la distancia para llegar a la meta; en otras palabras, carece de toda heurística que le proporcione alguna idea de hacia dónde dirigirse. Sin embargo, conoce el estado inicial, el conjunto de acciones aplicables en cada estado, los costos de cada acción y el estado meta.
 
 ### Depth First Search
 Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas del árbol de búsqueda. Utiliza como mecanismo una pila tipo LIFO, en la cual inserta los nodos que se evalúan para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 3. 
@@ -158,11 +160,15 @@ de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de 
 
 <p align="center"><em>Tabla 1: Evolución de la cola de prioridad durante la ejecución de UCS para el árbol de la Figura 4.</em></p>
 
+La implementación computacional de UCS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/ucs.ipynb">UCS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
+
+---
 ## Búsqueda Informada
+En la búsqueda informada, el agente dispone de información adicional sobre el problema que puede utilizar para orientar la exploración hacia aquellos estados que parecen
+más prometedores. De esta manera, es posible reducir el número de estados explorados y, en determinadas condiciones, encontrar una solución con menor esfuerzo computacional.
 
 ### Greedy Best First Search
+El algoritmo Greedy Best-First Search, orienta la exploración utilizando exclusivamente los valores proporcionados por la función heurística h(n), sin considerar el costo de las acciones. Para ello, emplea una cola de prioridad en la que los nodos se organizan de acuerdo con su valor heurístico, de tal manera que se selecciona para expansión, el nodo con el menor valor de h(n), bajo la interpretación de que este valor da un indicio del mejor camino hacia la meta. De esta manera, el algoritmo prioriza aquellos nodos que, de acuerdo con la información heurística disponible, parecen estar más cerca de conducir hacia la solución. En el caso expuesto en la Figura 5, desde el estado inicial, el orden de prioridad para exploración es 2,6 y 9, es decir, que el agente seguirá el camino en dirección hacia el nodo 2. Todos los pasos que seguirá el algoritmo GBFS para este ejemplo se muestran en la Tabla 2.
 
-
-La implementación computacional de UCS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/ucs.ipynb">UCS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
 
 
