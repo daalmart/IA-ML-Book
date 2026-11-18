@@ -101,8 +101,8 @@ caminos al mismo nodo, esto evitará que el algoritmo se quede en un bucle infin
 7. E sale de la pila y se genera backtracking debido a que no tiene hijos y tampoco es la meta.
 8. Solamente queda el nodo D. Dado que este es la meta, el algoritmo termina. La secuencia final de estados visitados es:
 
-   <p align="center">
-  <img width="450" alt="Visitados DFS" src="../resources/figures/visitadosDFS.png" />
+<p align="center">
+  <img width="500" height="100" alt="Visitados DFS" src="../resources/figures/visitadosDFS.png" />
 </p>
 
 y las acciones que el agente debe ejecutar son {b,e,e’,b’,a,d,d’,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no
