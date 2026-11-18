@@ -88,11 +88,11 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
 Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas del árbol de búsqueda. Utiliza como mecanismo una pila tipo LIFO, en la cual inserta los nodos que se evalúan
 para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 1.9. Los pasos a seguir por el algoritmo son los siguientes:
 
-1. Se inserta el nodo inicial en la pila LIFO: A.
-2. Se extrae A de la pila y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la pila y se marcan como visitados. La pila ahora es B , C. Es
+1. Se inserta el nodo inicial en la pila LIFO: [A].
+2. Se extrae A de la pila y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la pila y se marcan como visitados. La pila ahora es B , C. Es
 común que en las implementaciones en lenguajes de programación se denomine como pop y push a los procesos de extracción e inserción en la pila, respectivamente.
 3. Si tenemos en cuenta que los nodos en la pila se van insertando de izquierda a derecha, entonces el nodo C es el último que entró. Por lo tanto, extraemos C. Ya que C no es el nodo
-meta, extraemos su único hijo que en este caso es F, lo ponemos en la pila y lo marcamos como visitado. La pila resultante es B , F.
+meta, extraemos su único hijo que en este caso es F, lo ponemos en la pila y lo marcamos como visitado. La pila resultante es B, F.
 4. El siguiente nodo en ser extraído es el último en entrar (pila LIFO). Entonces extraemos F. Ya que no es el nodo meta, y no tiene hijos, se pasa a extraer el nodo B. Como se puede
 apreciar, en este paso hubo backtracking o retroceso, el cual no requirió manejo adicional debido a que está implícito en la forma en la que trabaja la pila LIFO.
 5. Dado que el nodo B ya fue marcado como visitado, no se vuelve a insertar en la pila. El proceso de marcar a los nodos como visitados es muy importante cuando hay múltiples
