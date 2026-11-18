@@ -136,7 +136,7 @@ de la computación neerlandés Edsger W. Dijkstra, para encontrar caminos de cos
 de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de Popayán. Los pasos que el algoritmo ejecuta se muestran en la Tabla 1. Observe que la ruta que escogería el vehículo autónomo utilizando UCS es la que atraviesa el departamento del Cauca, dado que el costo acumulado de esta ruta es 29, mientras que la otra ruta acumula un costo de 30. Aunque este resultado puede parecer bastante obvio para un ser humano, es importante recordar que los algoritmos de inteligencia artificial, como los expuestos en este libro, constituyen herramientas que permiten dotar a los sistemas computacionales de mecanismos para analizar diferentes alternativas y seleccionar aquella que, de acuerdo con los criterios establecidos, resulte más conveniente.
 
 <p align="center">
-  <img width="300" alt="Visitados BFS" src="../resources/figures/UCS.png" />
+  <img width="300" alt="UCS" src="../resources/figures/UCS.png" />
    <br>
   <em>Figura 4: Árbol de búsqueda que representa el viaje de un vehículo autónomo desde Bogotá hasta el Valle de Sibundoy en Colombia. Los costos entre estados (nodos del árbol) se estiman a partir del estado histórico de las vías.</em>
 </p>
@@ -171,7 +171,7 @@ más prometedores. De esta manera, es posible reducir el número de estados expl
 El algoritmo Greedy Best-First Search, orienta la exploración utilizando exclusivamente los valores proporcionados por la función heurística h(n), sin considerar el costo de las acciones. Para ello, emplea una cola de prioridad en la que los nodos se organizan de acuerdo con su valor heurístico, de tal manera que se selecciona para expansión, el nodo con el menor valor de h(n), bajo la interpretación de que este valor da un indicio del mejor camino hacia la meta. De esta manera, el algoritmo prioriza aquellos nodos que, de acuerdo con la información heurística disponible, parecen estar más cerca de conducir hacia la solución. En el caso expuesto en la Figura 5, desde el estado inicial, el orden de prioridad para exploración es 2,6 y 9, es decir, que el agente seguirá el camino en dirección hacia el nodo 2. Todos los pasos que seguirá el algoritmo GBFS para este ejemplo se muestran en la Tabla 2.
 
 <p align="center">
-  <img width="300" alt="Visitados BFS" src="../resources/figures/GBFS.png" />
+  <img width="300" alt="GBFS" src="../resources/figures/heuristic.png" />
    <br>
   <em>Figura 5: Caso del espacio de estados para un vehículo autónomo que busca llegar a la meta. Para cada nodo n, se define una heurística h(n) que disminuye para aquellos nodos que tienen mejor potencial para conducir hacia la meta. El agente preferirá irse por la ruta del nodo 2.</em>
 </p>
