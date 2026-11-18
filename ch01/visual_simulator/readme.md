@@ -207,14 +207,14 @@ f (n) = g(n) + h(n),
 
 es decir, A* considera el costo acumulado de cada nodo desde el nodo inicial hasta n, representado por g(n), y una estimación del costo restante desde n hasta la meta, representada por h(n). De esta manera, el algoritmo busca un equilibrio entre el costo que ya se ha tenido que asumir para llegar a un determinado nodo y el costo estimado que aún falta para alcanzar la meta. Bajo condiciones apropiadas sobre la función heurística, tales como la admisibilidad y la consistencia, este comportamiento permite que A* sea completo y encuentre soluciones óptimas. Estas condiciones se describen a continuación de manera resumida. Para obtener más detalles sobre estos concpetos, remítase al Capítulo 1 del libro de introducción a la inteligencia artificial, disponible en: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/ch01.pdf">Capítulo 1.</a>
 
-### Admisibilidad
+#### Admisibilidad
 La admisibilidad establece que el valor de una heurística h(n), para un nodo específico n, debe ser no negativo y no debe superar el costo óptimo real h∗ (n) para alcanzar la meta desde ese mismo nodo. Este costo óptimo real, corresponde al costo mínimo acumulado de las acciones necesarias para alcanzar la meta desde el nodo n. Formalmente, la condición de admisibilidad se expresa como
 
 ∀n, 0 ≤ h(n) ≤ h∗ (n).
 
 El algoritmo A* es óptimo en costo para búsqueda en árboles cuando utiliza una heurística admisible.
 
-### Consistencia
+#### Consistencia
 Esta condición establece que una heurística h(n) es consistente si para cada nodo n y para cada nodo n′ sucesor de n generado mediante la acción a, se tiene
 
 h(n) ≤ c(n, a, n′ ) + h(n′ ),
