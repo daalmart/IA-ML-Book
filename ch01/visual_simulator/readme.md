@@ -132,7 +132,7 @@ de la computación neerlandés Edsger W. Dijkstra, para encontrar caminos de cos
 de Neiva y otra atravesando el departamento del Cauca, pasando por la ciudad de Popayán. Los pasos que el algoritmo ejecuta se muestran en la Tabla 1. Observe que la ruta que escogería el vehículo autónomo utilizando UCS es la que atraviesa el departamento del Cauca, dado que el costo acumulado de esta ruta es 29, mientras que la otra ruta acumula un costo de 30. Aunque este resultado puede parecer bastante obvio para un ser humano, es importante recordar que los algoritmos de inteligencia artificial, como los expuestos en este libro, constituyen herramientas que permiten dotar a los sistemas computacionales de mecanismos para analizar diferentes alternativas y seleccionar aquella que, de acuerdo con los criterios establecidos, resulte más conveniente.
 
 <p align="center">
-  <img width="400" alt="Visitados BFS" src="../resources/figures/UCS.png" />
+  <img width="300" alt="Visitados BFS" src="../resources/figures/UCS.png" />
    <br>
   <em>Figura 4: Árbol de búsqueda que representa el viaje de un vehículo autónomo desde Bogotá hasta el Valle de Sibundoy en Colombia. Los costos entre estados (nodos del árbol) se estiman a partir del estado histórico de las vías.</em>
 </p>
