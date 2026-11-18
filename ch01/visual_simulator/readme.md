@@ -176,6 +176,8 @@ El algoritmo Greedy Best-First Search, orienta la exploración utilizando exclus
   <em>Figura 5: Caso del espacio de estados para un vehículo autónomo que busca llegar a la meta. Para cada nodo n, se define una heurística h(n) que disminuye para aquellos nodos que tienen mejor potencial para conducir hacia la meta. El agente preferirá irse por la ruta del nodo 2.</em>
 </p>
 
+<div align="center">
+   
 | Paso | Nodo que entra | $h(n)$ | Nodo que sale |
 | :---: | :--- | :--- | :---: |
 | 1 | 1 | $h(1) = 4$ | – |
@@ -186,6 +188,8 @@ El algoritmo Greedy Best-First Search, orienta la exploración utilizando exclus
 | 6 | – | – | 5 |
 
 <p align="center"><em>Tabla 2: Ejecución de Greedy Best-First Search para el ejemplo de la Figura 5. GBFS no considera costos acumulados sino solamente valores de heurística.</em></p>
+
+</div>
 
 Tal como ya lo mencionamos en la sección #agente, la función heurística h(n) en el caso de nuestro simulador ofrece dos opciones, una heurística Euclideana y otra de tipo Manhattan, ambas considerando las coordenadas x e y de cada uno de los nodos para calcular las distancias hasta el nodo meta.
 
