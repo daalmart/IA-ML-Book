@@ -86,18 +86,20 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
 
 ### Depth First Search
 Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas del árbol de búsqueda. Utiliza como mecanismo una pila tipo LIFO, en la cual inserta los nodos que se evalúan
-para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 1.9. Los pasos a seguir por el algoritmo son los siguientes:
+para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 3. 
+
+<p align="center">
+  <img width="500" height="100" alt="Visitados DFS" src="../resources/figures/treeCh01.png" />
+</p>
+
+Los pasos a seguir por el algoritmo son los siguientes:
 
 1. Se inserta el nodo inicial en la pila LIFO: [A].
-2. Se extrae A de la pila y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la pila y se marcan como visitados. La pila ahora es B , C. Es
-común que en las implementaciones en lenguajes de programación se denomine como pop y push a los procesos de extracción e inserción en la pila, respectivamente.
-3. Si tenemos en cuenta que los nodos en la pila se van insertando de izquierda a derecha, entonces el nodo C es el último que entró. Por lo tanto, extraemos C. Ya que C no es el nodo
-meta, extraemos su único hijo que en este caso es F, lo ponemos en la pila y lo marcamos como visitado. La pila resultante es B, F.
-4. El siguiente nodo en ser extraído es el último en entrar (pila LIFO). Entonces extraemos F. Ya que no es el nodo meta, y no tiene hijos, se pasa a extraer el nodo B. Como se puede
-apreciar, en este paso hubo backtracking o retroceso, el cual no requirió manejo adicional debido a que está implícito en la forma en la que trabaja la pila LIFO.
-5. Dado que el nodo B ya fue marcado como visitado, no se vuelve a insertar en la pila. El proceso de marcar a los nodos como visitados es muy importante cuando hay múltiples
-caminos al mismo nodo, esto evitará que el algoritmo se quede en un bucle infinito.
-6. Se extrae el nodo B. Al no ser la meta, sus hijos, se marcan como visitados y se se extraen ponen en la pila, con lo cual se tiene D , E.
+2. Se extrae A de la pila y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la pila y se marcan como visitados. La pila ahora es [B, C]. Es común que en las implementaciones en lenguajes de programación se denomine como pop y push a los procesos de extracción e inserción en la pila, respectivamente.
+3. Si tenemos en cuenta que los nodos en la pila se van insertando de izquierda a derecha, entonces el nodo C es el último que entró. Por lo tanto, extraemos C. Ya que C no es el nodo meta, extraemos su único hijo que en este caso es F, lo ponemos en la pila y lo marcamos como visitado. La pila resultante es [B, F].
+4. El siguiente nodo en ser extraído es el último en entrar (pila LIFO). Entonces extraemos F. Ya que no es el nodo meta, y no tiene hijos, se pasa a extraer el nodo B. Como se puede apreciar, en este paso hubo backtracking o retroceso, el cual no requirió manejo adicional debido a que está implícito en la forma en la que trabaja la pila LIFO.
+5. Dado que el nodo B ya fue marcado como visitado, no se vuelve a insertar en la pila. El proceso de marcar a los nodos como visitados es muy importante cuando hay múltiples caminos al mismo nodo, esto evitará que el algoritmo se quede en un bucle infinito.
+6. Se extrae el nodo B. Al no ser la meta, sus hijos, se marcan como visitados y se se extraen ponen en la pila, con lo cual se tiene [D, E].
 7. E sale de la pila y se genera backtracking debido a que no tiene hijos y tampoco es la meta.
 8. Solamente queda el nodo D. Dado que este es la meta, el algoritmo termina. La secuencia final de estados visitados es:
 
@@ -105,5 +107,4 @@ caminos al mismo nodo, esto evitará que el algoritmo se quede en un bucle infin
   <img width="500" height="100" alt="Visitados DFS" src="../resources/figures/visitadosDFS.png" />
 </p>
 
-y las acciones que el agente debe ejecutar son {b,e,e’,b’,a,d,d’,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no
-ingresan a la pila LIFO por segunda vez, esto, tal como ya lo hemos dicho, con el fin de evitar bucles infinitos en el algoritmo.
+y las acciones que el agente debe ejecutar son {b,e,e’,b’,a,d,d’,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no ingresan a la pila LIFO por segunda vez, esto, tal como ya lo hemos dicho, con el fin de evitar bucles infinitos en el algoritmo.
