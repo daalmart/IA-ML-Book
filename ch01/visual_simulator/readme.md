@@ -10,11 +10,11 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
 3. [Fundamentos Teóricos de los Algoritmos](#-fundamentos-teóricos-de-los-algoritmos)
    - [Agente](#agente)
    - [Árbol de Búsqueda](#árbol-de-búsqueda)
-   - [Depth First Search](#dfs-depth-first-search) 
-   - [BFS-Breadth First Search](#breadth-first-search)
-   - [UCS-Uniform Cost Search](#ucs-uniform-cost-search)
-   - [GBFS-Greedy Best First Search](#gbfs)
-   - [A*](#a*)
+   - [Depth First Search](#depth-first-search) 
+   - [Breadth First Search](#breadth-first-search)
+   - [Uniform Cost Search](#uniform-cost-search)
+   - [Greedy Best First Search](#gbfs)
+   - [A*](#a)
 4. [Guía de Laboratorio: Experimentos Sugeridos](#-guía-de-laboratorio-experimentos-sugeridos)
 
 ---
@@ -85,8 +85,7 @@ Un árbol de búsqueda es un mecanismo gráfico que permite representar al espac
 </div>
 
 ### Depth First Search
-Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas del árbol de búsqueda. Utiliza como mecanismo una pila tipo LIFO, en la cual inserta los nodos que se evalúan
-para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 3. 
+Es un algoritmo que hace una revisión de nodos hacia lo profundo de las ramas del árbol de búsqueda. Utiliza como mecanismo una pila tipo LIFO, en la cual inserta los nodos que se evalúan para identificar si son o no el nodo meta. Adicionalmente, cada nodo que ingresa a la pila  se marca como visitado para evitar ciclos infinitos. Cuando el nodo evaluado no es el nodo meta, se insertan en la pila sus nodos hijos y se repite el proceso hasta llegar a la solución. Si un nodo no tiene hijos, y además no es el nodo meta, el algoritmo genera un proceso de retroceso (backtracking) para seguir la búsqueda en el siguiente nodo disponible. Para entender mejor este proceso, suponga el caso del árbol de decisión mostrado en la Figura 3. 
 
 <p align="center">
   <img width="300" alt="Visitados DFS" src="../resources/figures/treeCh01.png" />
@@ -112,3 +111,21 @@ Los pasos a seguir por el algoritmo son los siguientes:
 y las acciones que el agente debe ejecutar son {b,e,e’,b’,a,d,d’,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no ingresan a la pila LIFO por segunda vez, esto, tal como ya lo hemos dicho, con el fin de evitar bucles infinitos en el algoritmo.
 
 La implementación computacional de DFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/dfs_bfs.ipynb">DFS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
+
+### Breadth First Search
+A diferencia del DFS, el algoritmo BFS hace una búsqueda del nodo meta hacia lo ancho del árbol. Para lograr esto, BFS se vale de una cola tipo FIFO, en la cual, el primer nodo en entrar es el primero en salir. En otras palabras, el comportamiento implícito en el proceso de inserción y extracción de este tipo de cola, garantiza que el árbol sea explorado hacia lo ancho y no hacia lo profundo como ocurre con DFS y su pila tipo LIFO. Para describir con mayor detalle el proceso, vamos a utilizar nuevamente el árbol mostrado en la Figura 3. Los pasos que el algoritmo sigue son los siguientes:
+1. Se inserta el nodo inicial en la cola FIFO: [A].
+2. Se extrae A de la cola y se marca como nodo visitado. Ya que el nodo A no es la meta, insertamos sus hijos en la cola y se marcan como visitados. La cola ahora es [B, C].
+3. Si tenemos en cuenta que los nodos en la cola se van insertando de izquierda a derecha, entonces el nodo B fue el primero en entrar, por lo tanto, extraemos B. Ya que B no es el nodo meta, extraemos sus hijos, los ponemos en la cola y los marcamos como visitados. La pila resultante es [C, D, E].
+4. El siguiente nodo en ser extraído es C, dado que ingresó antes que los nodos D y E. Ya que no es el nodo meta, extraemos su único hijo que es el nodo F, y lo ponemos en la cola, cuyo contenido ahora es [D, E, F].
+5. Se extrae el nodo D. Dado que este es la meta, el algoritmo termina. La secuencia final de estados visitados es:
+
+<p align="center">
+  <img width="500" height="100" alt="Visitados BFS" src="../resources/figures/visitadosBFS.png" />
+</p>
+
+y las acciones que el agente debe ejecutar son {a,a’,b,b’,a,c}. Los nodos que se muestran en gris y con línea punteada, son aquellos que ya se habían marcado como visitados y no ingresan a la cola FIFO por segunda vez, esto, tal como ya lo hemos dicho, con el fin de evitar bucles infinitos en el algoritmo. Es importante tener en cuenta que en BFS no hay proceso de backtracking debido a que el algoritmo no se devuelve hacia los nodos padre. Si comparamos el número de nodos visitados en DFS y BFS, nos damos cuenta que BFS solamente visitó 3 nodos antes de llegar a la meta; por el contrario, DFS visitó 5, lo que supone que DFS toma más tiempo de ejecución para el caso de nuestro ejemplo. En términos de acciones ejecutadas, se puede apreciar que en BFS se tuvieron 6, 2 menos que en DFS.
+
+La implementación computacional de BFS usada en nuestro simulador, está disponible en el siguiente enlace: <a href="https://github.com/daalmart/IA-ML-Book/blob/main/ch01/uninformed_search/dfs_bfs.ipynb">BFS.</a> En el enlace también encontrará ejemplos de uso para resolver problemas planteados como árboles de búsqueda.
+
+
