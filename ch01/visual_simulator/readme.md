@@ -15,7 +15,7 @@ Entorno interactivo desarrollado en **Python** y **Pygame** para visualizar, com
      - [Breadth First Search](#breadth-first-search)
      - [Uniform Cost Search](#uniform-cost-search)
    - [Búsqueda Informada](#búsqueda-informada)
-     - [Greedy Best First Search](#gbfs)
+     - [Greedy Best First Search](#greedy-best-first-search)
      - [A*](#a)
 4. [Guía de Laboratorio: Experimentos Sugeridos](#-guía-de-laboratorio-experimentos-sugeridos)
 
